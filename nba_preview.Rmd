@@ -1,0 +1,66 @@
+---
+title: "Evaluating the Travel Burden of the 2019-2020 NBA Schedule"
+date: A Presentation (Preview) by John Sugden
+output:
+  revealjs::revealjs_presentation:
+    theme: sky 
+    highlight: pygments
+    center: true
+---
+
+## My Idea
+
+<style>
+.reveal section img { background:none; border:none; box-shadow:none; }
+</style>
+
+- Evaulate the travel burden of each NBA team this upcoming season
+  - 30 NBA teams
+  - Each team plays 82 games per year
+  - Each team plays at each stadium at least once
+
+## 30 Teams, 29 Stadiums
+
+![](NBA_Stadiums.png)
+
+## Avg. Distance Between Stadiums
+
+- Identified the nearest international airport to each NBA stadium
+- Looked up the stadium's geo-coordinates
+- Used R to measure the distance
+  - geosphere package
+  - distm() function
+  - distVincentyEllipsoid parameter ("great circle distance")
+
+## Avg. Distance Between Stadiums
+
+![](Stadium_Dist.png)
+
+## Evaluating Existing Schedule
+
+- Accessed 2019-2020 schedule from [https://www.basketball-reference.com/leagues/NBA_2020_games.html](https://www.basketball-reference.com/leagues/NBA_2020_games.html)
+- Assumptions:
+  - Each team starts at home
+  - Each team returns home during the All-Star Break
+  - Each team returns home at the end of the season
+  - Ignores playoffs
+
+## 2019-2020 Travel Schedule
+
+![](Schedule_Map.png)
+
+## Approx. Seasonal Air Travel
+
+![](Diff_Plot.png)
+
+## There Appears to be a Problem...
+
+- There seems to exist an unbalanced travel burden for the 30 NBA teams
+  - higher/lower travel burdens could unknowingly affect schedule difficulty
+- The NBA could fix this problem if they wanted to, but distance isn't their only concern when setting schedules
+- So, let me see if I can propose a better, more balanced schedule
+
+## Stay Tuned for the Full Presentation
+
+* johnmatthewsugden@gmail.com
+* http://www.github.com/johnsug/nba
